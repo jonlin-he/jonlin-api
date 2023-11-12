@@ -1,0 +1,8 @@
+server:
+  port: 8102
+  servlet:
+    context-path: /api
+sdk:
+  client:
+    access-key: "jonlin"
+    secret-key: "abcdefgh"

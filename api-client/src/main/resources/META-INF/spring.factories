@@ -1,0 +1,2 @@
+## 指定配置类，这样当这个项目作为依赖被其他人导入时，才会将配置类加入到spring容器中管理
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.jonlin.apiclient.config.ApiClientConfig

@@ -1,0 +1,6 @@
+# 项目排除路径
+/api-admin/target/
+/api-client/target/
+/api-common/target/
+/api-gateway/target/
+/api-interface/target/

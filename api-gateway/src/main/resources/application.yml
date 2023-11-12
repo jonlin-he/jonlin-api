@@ -1,0 +1,47 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: api-interface
+          uri: http://localhost:8102
+          predicates:
+            - Path=/api/**
+
+#        - id: add_request_header_route
+#          uri: http://localhost:8123
+#          predicates:
+#            - Path=/api/**
+#          filters:
+#            - AddRequestHeader=yupi, swag
+#            - AddRequestParameter=name, dog
+#            - name: CircuitBreaker
+#              args:
+#                name: myCircuitBreaker
+#                fallbackUri: forward:/fallback
+  redis:
+    database: 2
+    host: 192.168.3.128
+    port: 6379
+    timeout: 5000
+    password: 123456
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          gateway: trace
+dubbo:
+  application:
+    qosEnable: false
+    enable-file-cache: false
+    name: api-gateway
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    id: nacos-registry
+    address: nacos://192.168.3.128:8848
